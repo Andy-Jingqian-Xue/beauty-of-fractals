@@ -1,7 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
+
 from numba import jit
 from matplotlib.patches import Circle
+
+c_pre = 0
+mpl.rcParams['font.family'] = 'Cambria'
 
 
 @jit(nopython=True)
@@ -21,10 +26,10 @@ def compute_trajectory(c_or_z, max_iter, predefined_c, for_mandelbrot):
 
 
 class MandelbrotJuliaApp:
-    def __init__(self):
+    def __init__(self, c):
         self.mouse_pressed = False
         self.fig, (self.ax1, self.ax2) = plt.subplots(1, 2, figsize=(15, 6))
-        self.predefined_c = 0
+        self.predefined_c = c
         self.black_points = {'Mandelbrot': [], 'Julia': []}
         self.current_mandelbrot_trajectory = None
         self.current_julia_trajectory = None
@@ -118,5 +123,5 @@ class MandelbrotJuliaApp:
         self.fig.canvas.draw_idle()
 
 
-app = MandelbrotJuliaApp()
+app = MandelbrotJuliaApp(c_pre)
 plt.show()
