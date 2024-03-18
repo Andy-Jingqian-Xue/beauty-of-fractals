@@ -3,9 +3,9 @@ from shapely.geometry import LineString, Point
 import geopandas as gpd
 warnings.filterwarnings("ignore", category=RuntimeWarning, module='shapely')
 
-input_path = "sample_data/contour16.shp"
-output_path = "bends16.shp"
-tolerance = 50
+input_path = "sample_data/contour04.shp"
+output_path = "bends04.shp"
+tolerance = 5
 
 
 def find_farthest_point(line, points):

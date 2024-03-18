@@ -52,8 +52,5 @@ Addtionally, ArcGIS desktop 10.4 (and Axwoman 6.3 if possible <http://livablecit
 
 ## Results
 
-## References
-
-[1] Chen Z., Yu B., Yang C., Zhou Y., Yao S., Qian X., Wang C., Wu B. and Wu J. (2021), An extended time series (2000–2018) of global NPP-VIIRS-Like nighttime light data from a cross-Sensor calibration, _Earth Syst Sci Data_, 13(3), 889-906.
-
-[2] Jiang B. and de Rijke C. (2023), Living images: A recursive approach to computing the structural beauty of images or the livingness of space, _Annals of the American Association of Geographers_, 1-19.
+* Comparison between the Mandelbrot set after 4 iterations and 16 iterations
+![results](img-folder/Figure3.jpg)

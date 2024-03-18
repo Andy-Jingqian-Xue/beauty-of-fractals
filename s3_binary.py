@@ -9,8 +9,8 @@ from numba import jit
 max_iter = 16  # Number of iterations to perform for both MS and JS
 
 # Image size and extent for MS and JS
-mandelbrot_width, mandelbrot_height = 601, 601
-mandelbrot_extent = (-2.0, 1.0, -1.5, 1.5)
+mandelbrot_width, mandelbrot_height = 12001, 12001
+mandelbrot_extent = (-2.0, 1.0, 0, 1.5)
 
 julia_width, julia_height = 601, 601
 julia_extent = (-2, 2, -2, 2)
@@ -101,7 +101,7 @@ def update_circle_and_julia(event):
     julia_img_binary = generate_julia(
         c_js, julia_extent, julia_width, julia_height, max_iter)
     ax2.clear()
-    ax2.imshow(julia_img_binary, extent=(-2, 2, -2, 2),
+    ax2.imshow(julia_img_binary, extent=julia_extent,
                cmap=bin_cmap, zorder=2)
     ax2.set_title(f"Julia Set for c = {c_js:.2f}")
     ax2.set_xticks(np.arange(-2, 2.1, 1))
@@ -124,7 +124,7 @@ mandelbrot_img_binary = np.flipud(generate_mandelbrot(mandelbrot_extent,
 cv2.imwrite('ms_%d.png' % max_iter, np.where(
     mandelbrot_img_binary == 1, 0, 1) * 255)
 
-ax1.imshow(mandelbrot_img_binary, extent=(-2.0, 1.0, -1.5, 1.5),
+ax1.imshow(mandelbrot_img_binary, extent=mandelbrot_extent,
            cmap=bin_cmap, vmin=0, vmax=1, zorder=2)
 ax1.set_title("Mandelbrot Set")
 ax1.set_xticks(np.arange(-2, 1.1, 1))
@@ -135,7 +135,7 @@ ax1.set_yticks(np.arange(-1.5, 1.6, 1))
 c_js = complex(-0.8, 0.156)  # Initial value for c
 julia_img_binary = np.flipud(generate_julia(c_js, julia_extent,
                                             julia_width, julia_height, max_iter))
-ax2.imshow(julia_img_binary, extent=(-2, 2, -2, 2),
+ax2.imshow(julia_img_binary, extent=julia_extent,
            cmap=bin_cmap, vmin=0, vmax=1, zorder=2)
 
 ax2.set_title(f"Julia Set for {c_js:.2f}")
