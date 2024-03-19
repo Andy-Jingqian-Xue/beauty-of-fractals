@@ -40,7 +40,7 @@ Addtionally, ArcGIS desktop 10.4 (and Axwoman 6.3 if possible <http://livablecit
 
 ## Identifying substructures
 
-1. Open s4_bends.py and change the parameters of input_path and output_path where there are the input Mandelbrot set polygon shapefile and output contour line shapefile of the identified bends. We have already provided a sample contour in `sample_data/contour16.shp`.
+1. Open `s4_beauty.py` and change the parameters of input_path and output_path where there are the input Mandelbrot set polygon shapefile and output contour line shapefile of the identified bends. We have already provided a sample contour in `sample_data/contour16.shp`.
 
 2. Run the Python script in your IDE or run command:
 
@@ -48,7 +48,7 @@ Addtionally, ArcGIS desktop 10.4 (and Axwoman 6.3 if possible <http://livablecit
     python s4_bends.py
     ```
 
-3. The substructures, which are the bends defined by three vertices, will be autormatically indentified and saved as `bends.shp`. Please follow the `Tutorial4MSJS.docx` for more details on calculating the degree of substral beauty.
+3. The substructures, which are the bends defined by three vertices, will be autormatically indentified and saved as `bends16.shp`. Please follow the `Tutorial4MSJS.docx` for more details on calculating the degree of substral beauty.
 
 ## Results
 
