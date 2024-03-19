@@ -9,8 +9,8 @@ from numba import jit
 max_iter = 16  # Number of iterations to perform for both MS and JS
 
 # Image size and extent for MS and JS
-mandelbrot_width, mandelbrot_height = 12001, 12001
-mandelbrot_extent = (-2.0, 1.0, 0, 1.5)
+mandelbrot_width, mandelbrot_height = 601, 601
+mandelbrot_extent = (-2.0, 1.0, -1.5, 1.5)
 
 julia_width, julia_height = 601, 601
 julia_extent = (-2, 2, -2, 2)
@@ -161,4 +161,4 @@ fig.canvas.mpl_connect('button_release_event', onrelease)
 fig.canvas.mpl_connect('motion_notify_event', onmotion)
 btn.on_clicked(save_image)
 
-plt.show()
+# plt.show()
